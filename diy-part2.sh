@@ -31,7 +31,7 @@ rm -rf feeds/luci/themes/luci-theme-design && git clone --depth 1 https://github
 rm -rf feeds/luci/applications/luci-app-design-config && git clone --depth 1 https://github.com/gngpp/luci-app-design-config feeds/luci/applications/luci-app-design-config
 
 #6.添加自动挂载磁盘脚本
-#mkdir -p files/etc/hotplug.d/block && wget -O files/etc/hotplug.d/block/30-usbmount https://raw.githubusercontent.com/ficheny/P3TERX_Actions-OpenWrt/main/files/etc/hotplug.d/block/30-usbmount && chmod 755 files/etc/hotplug.d/block/30-usbmount
+mkdir -p files/etc/hotplug.d/block && wget -O files/etc/hotplug.d/block/30-usbmount https://raw.githubusercontent.com/ficheny/P3TERX_Actions-OpenWrt/main/files/etc/hotplug.d/block/30-usbmount && chmod 755 files/etc/hotplug.d/block/30-usbmount
 
 #7.修改主机名
 sed -i "s/hostname='OpenWrt'/hostname='MiWiFi-mini'/g" package/base-files/files/bin/config_generate
@@ -46,7 +46,7 @@ sed -i "s/hostname='OpenWrt'/hostname='MiWiFi-mini'/g" package/base-files/files/
 #sed -i '/exit 0/i /etc/init.d/qca-nss-ecm disable' package/lean/default-settings/files/zzz-default-settings
 
 #10.为bypass添加redsocks2依赖。
-#svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
+svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
 
 #####design主题导航栏设置######
 #sed -i 's/shadowsocksr/bypass/g' feeds/fichenx/luci-theme-design/luasrc/view/themes/design/header.htm
